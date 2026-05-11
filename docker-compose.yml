@@ -9,7 +9,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
     ports:
-      - "8085:8080"
+      - "8580:8080"
     volumes:
       - umbraco-media:/app/wwwroot/media
       - umbraco-logs:/app/umbraco/Logs
