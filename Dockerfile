@@ -7,10 +7,9 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ElinesKrudtuglerUmbraco/ElinesKrudtuglerUmbraco.csproj", "ElinesKrudtuglerUmbraco/"]
-RUN dotnet restore "ElinesKrudtuglerUmbraco/ElinesKrudtuglerUmbraco.csproj"
+COPY ["ElinesKrudtuglerUmbraco.csproj", "./"]
+RUN dotnet restore "ElinesKrudtuglerUmbraco.csproj"
 COPY . .
-WORKDIR "/src/ElinesKrudtuglerUmbraco"
 RUN dotnet build "ElinesKrudtuglerUmbraco.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
@@ -39,7 +38,7 @@ RUN mkdir -p /https && \
     chmod 644 /https/aspnetcore.pfx
 
 # Copy entrypoint script
-COPY ElinesKrudtuglerUmbraco/entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Make APP_UID available at runtime (inherits from .NET base image ARG)

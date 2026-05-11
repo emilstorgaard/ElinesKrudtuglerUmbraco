@@ -2,7 +2,7 @@ services:
   umbraco:
     build:
       context: .
-      dockerfile: ElinesKrudtuglerUmbraco/Dockerfile
+      dockerfile: Dockerfile
     container_name: elines-krudtugler-umbraco
     restart: unless-stopped
     environment:
