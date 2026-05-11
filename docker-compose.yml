@@ -8,22 +8,18 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
-      - ConnectionStrings__umbracoDbDSN=Server=mssql,1433;Database=ElinesKrudtuglerUmbracoDB;User Id=sa;Password=${DB_PASSWORD};TrustServerCertificate=True;Encrypt=False;
-      - ConnectionStrings__umbracoDbDSN_ProviderName=Microsoft.Data.SqlClient
+    ports:
+      - "8085:8080"
     volumes:
       - umbraco-media:/app/wwwroot/media
       - umbraco-logs:/app/umbraco/Logs
     networks:
       - mssql-network
-      - npm-network
 
 networks:
   mssql-network:
     external: true
     name: mssql_default
-  npm-network:
-    external: true
-    name: proxy_default
 
 volumes:
   umbraco-media:
