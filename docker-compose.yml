@@ -8,6 +8,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__umbracoDbDSN=Server=emilstorgaard.dk,1433;Database=ElinesKrudtuglerUmbracoDB;User Id=DITBRUGERNAVN;Password=DITPASSWORD;TrustServerCertificate=true;
+      - ConnectionStrings__umbracoDbDSN_ProviderName=Microsoft.Data.SqlClient
     ports:
       - "8980:8080"
     volumes:
