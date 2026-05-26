@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Om</summary>
-	[PublishedModel("aboutPage")]
-	public partial class AboutPage : PublishedContentModel, ISeo
+	/// <summary>Kontakt</summary>
+	[PublishedModel("contactPage")]
+	public partial class ContactPage : PublishedContentModel, ISeo
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
-		public new const string ModelTypeAlias = "aboutPage";
+		public new const string ModelTypeAlias = "contactPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<AboutPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<ContactPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public AboutPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public ContactPage(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,111 +50,118 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Overskrift
+		/// Adresse-kort label
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("aboutHeading")]
-		public virtual string AboutHeading => this.Value<string>(_publishedValueFallback, "aboutHeading");
+		[ImplementPropertyType("addressCardLabel")]
+		public virtual string AddressCardLabel => this.Value<string>(_publishedValueFallback, "addressCardLabel");
 
 		///<summary>
-		/// Overskrift fremhævet
+		/// Status badge: Lille badge øverst i panelet. Fx 'Ledige pladser nu'.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("aboutHeadingHighlight")]
-		public virtual string AboutHeadingHighlight => this.Value<string>(_publishedValueFallback, "aboutHeadingHighlight");
+		[ImplementPropertyType("availabilityBadge")]
+		public virtual string AvailabilityBadge => this.Value<string>(_publishedValueFallback, "availabilityBadge");
 
 		///<summary>
-		/// Billede
+		/// Ring-knap tekst
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("aboutImage")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops> AboutImage => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops>>(_publishedValueFallback, "aboutImage");
+		[ImplementPropertyType("availabilityCallButton")]
+		public virtual string AvailabilityCallButton => this.Value<string>(_publishedValueFallback, "availabilityCallButton");
 
 		///<summary>
-		/// Sektions-label
+		/// Panel beskrivelse
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("aboutLabel")]
-		public virtual string AboutLabel => this.Value<string>(_publishedValueFallback, "aboutLabel");
+		[ImplementPropertyType("availabilityDescription")]
+		public virtual string AvailabilityDescription => this.Value<string>(_publishedValueFallback, "availabilityDescription");
 
 		///<summary>
-		/// Tekst
+		/// Email-knap tekst
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("aboutText")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString AboutText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "aboutText");
+		[ImplementPropertyType("availabilityEmailButton")]
+		public virtual string AvailabilityEmailButton => this.Value<string>(_publishedValueFallback, "availabilityEmailButton");
 
 		///<summary>
-		/// Billede
+		/// Vis ledige pladser panel: Slå til når der er ledige pladser. Når slået fra, vises hele panelet ikke.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
+		[ImplementPropertyType("availabilityEnabled")]
+		public virtual bool AvailabilityEnabled => this.Value<bool>(_publishedValueFallback, "availabilityEnabled");
+
+		///<summary>
+		/// Lille besked: Lille besked i fremhævet boks. Fx '💝 Jeg tilbyder introduktionsforløb...'.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("animalsImage")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops> AnimalsImage => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops>>(_publishedValueFallback, "animalsImage");
+		[ImplementPropertyType("availabilityNote")]
+		public virtual string AvailabilityNote => this.Value<string>(_publishedValueFallback, "availabilityNote");
 
 		///<summary>
-		/// Sektions-label
+		/// Panel titel: Hovedtitel. Brug Enter for linjeskift.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("animalsLabel")]
-		public virtual string AnimalsLabel => this.Value<string>(_publishedValueFallback, "animalsLabel");
+		[ImplementPropertyType("availabilityTitle")]
+		public virtual string AvailabilityTitle => this.Value<string>(_publishedValueFallback, "availabilityTitle");
 
 		///<summary>
-		/// Tekst
+		/// Sektion titel: Fx 'Kontaktoplysninger'. Selve oplysningerne (telefon, email, adresse) hentes automatisk fra Indstillinger.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("animalsText")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString AnimalsText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "animalsText");
+		[ImplementPropertyType("contactSectionTitle")]
+		public virtual string ContactSectionTitle => this.Value<string>(_publishedValueFallback, "contactSectionTitle");
 
 		///<summary>
-		/// Erfaring label
+		/// Rutevejledning-knap tekst
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("experienceLabel")]
-		public virtual string ExperienceLabel => this.Value<string>(_publishedValueFallback, "experienceLabel");
+		[ImplementPropertyType("directionsButtonText")]
+		public virtual string DirectionsButtonText => this.Value<string>(_publishedValueFallback, "directionsButtonText");
 
 		///<summary>
-		/// Erfaring værdi
+		/// Rutevejledning-knap URL: Fuld Google Maps URL til rutevejledning.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("experienceValue")]
-		public virtual string ExperienceValue => this.Value<string>(_publishedValueFallback, "experienceValue");
+		[ImplementPropertyType("directionsButtonUrl")]
+		public virtual string DirectionsButtonUrl => this.Value<string>(_publishedValueFallback, "directionsButtonUrl");
 
 		///<summary>
-		/// Billede
+		/// Sektion intro
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("familyImage")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops> FamilyImage => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops>>(_publishedValueFallback, "familyImage");
+		[ImplementPropertyType("directionsIntro")]
+		public virtual string DirectionsIntro => this.Value<string>(_publishedValueFallback, "directionsIntro");
 
 		///<summary>
-		/// Sektions-label
+		/// Sektion titel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("familyLabel")]
-		public virtual string FamilyLabel => this.Value<string>(_publishedValueFallback, "familyLabel");
+		[ImplementPropertyType("directionsTitle")]
+		public virtual string DirectionsTitle => this.Value<string>(_publishedValueFallback, "directionsTitle");
 
 		///<summary>
-		/// Tekst
+		/// Google Maps embed URL: Find adresse på maps.google.com → Del → Indlejr kort → kopier src-URL fra koden.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("familyText")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString FamilyText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "familyText");
+		[ImplementPropertyType("mapsEmbedUrl")]
+		public virtual string MapsEmbedUrl => this.Value<string>(_publishedValueFallback, "mapsEmbedUrl");
 
 		///<summary>
-		/// Intro tekst
+		/// Side intro
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -162,7 +169,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string PageIntro => this.Value<string>(_publishedValueFallback, "pageIntro");
 
 		///<summary>
-		/// Sidetitl
+		/// Side titel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -170,44 +177,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string PageTitle => this.Value<string>(_publishedValueFallback, "pageTitle");
 
 		///<summary>
-		/// Sidetitel fremhævet
+		/// Transport muligheder
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("pageTitleHighlight")]
-		public virtual string PageTitleHighlight => this.Value<string>(_publishedValueFallback, "pageTitleHighlight");
-
-		///<summary>
-		/// Overskrift
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("valuesHeading")]
-		public virtual string ValuesHeading => this.Value<string>(_publishedValueFallback, "valuesHeading");
-
-		///<summary>
-		/// Intro tekst
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("valuesIntro")]
-		public virtual string ValuesIntro => this.Value<string>(_publishedValueFallback, "valuesIntro");
-
-		///<summary>
-		/// Værdier (liste)
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("valuesList")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> ValuesList => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "valuesList");
-
-		///<summary>
-		/// Citat
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "17.3.5+1486121")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("valuesQuote")]
-		public virtual string ValuesQuote => this.Value<string>(_publishedValueFallback, "valuesQuote");
+		[ImplementPropertyType("transportOptions")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel TransportOptions => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "transportOptions");
 
 		///<summary>
 		/// Meta beskrivelse: Vises som beskrivelse i Google's søgeresultater. Anbefalet 150-160 tegn.
