@@ -3,7 +3,7 @@ services:
     # build:
     #   context: .
     image: ghcr.io/emilstorgaard/elines-krudtugler-umbraco:latest
-    container_name: elines-krudtugler-umbraco-test
+    container_name: elines-krudtugler-umbraco
     restart: unless-stopped
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
@@ -11,7 +11,7 @@ services:
       - ConnectionStrings__umbracoDbDSN=Server=emilstorgaard.dk,1433;Database=ElinesKrudtuglerUmbracoDB;User Id=DITBRUGERNAVN;Password=DITPASSWORD;TrustServerCertificate=true;
       - ConnectionStrings__umbracoDbDSN_ProviderName=Microsoft.Data.SqlClient
     ports:
-      - "8980:8080"
+      - "8580:8080"
     volumes:
       - umbraco-media:/app/wwwroot/media
       - umbraco-logs:/app/umbraco/Logs

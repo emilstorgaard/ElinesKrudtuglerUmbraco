@@ -41,6 +41,6 @@ jobs:
           envs: GHCR_PAT,GITHUB_ACTOR
           script: |
             echo "$GHCR_PAT" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
-            cd ~/Dagpleje/ElinesKrudtuglerUmbracoTest
+            cd ~/Dagpleje/ElinesKrudtuglerUmbraco
             docker compose pull
             docker compose up -d
