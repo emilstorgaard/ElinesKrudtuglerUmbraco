@@ -2,8 +2,6 @@ services:
   umbraco:
     # build:
     #   context: .
-    #   dockerfile: Dockerfile
-    #
     image: ghcr.io/emilstorgaard/elines-krudtugler-umbraco:latest
     container_name: elines-krudtugler-umbraco-test
     restart: unless-stopped
