@@ -1,15 +1,16 @@
 services:
   umbraco:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: elines-krudtugler-umbraco
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: ghcr.io/emilstorgaard/elines-krudtugler-umbraco:v1
+    container_name: elines-krudtugler-umbraco-test
     restart: unless-stopped
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
     ports:
-      - "8580:8080"
+      - "8980:8080"
     volumes:
       - umbraco-media:/app/wwwroot/media
       - umbraco-logs:/app/umbraco/Logs
